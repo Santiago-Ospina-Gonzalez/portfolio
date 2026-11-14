@@ -1,135 +1,97 @@
-﻿<header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">SOG<span>.</span></a>
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+<main class="xp-desktop">
+  <div class="desktop-icons">
+    <button class="desktop-icon" (click)="openWindow('sobre-mi')">
+      <span class="icon-art icon-user">👤</span>
+      <span>Sobre Santiago</span>
+    </button>
+    <button class="desktop-icon" (click)="openWindow('proyectos')">
+      <span class="icon-art icon-folder">📁</span>
+      <span>Mis proyectos</span>
+    </button>
+    <button class="desktop-icon" (click)="openWindow('contacto')">
+      <span class="icon-art icon-mail">✉️</span>
+      <span>Contacto</span>
+    </button>
+  </div>
+
+  <section class="xp-window welcome-window" aria-labelledby="welcome-title">
+    <header class="window-titlebar">
+      <span id="welcome-title">Santiago Ospina Gonzalez - Portafolio</span>
+      <div class="window-controls" aria-hidden="true">
+        <span>_</span><span>□</span><span>×</span>
+      </div>
     </header>
+    <div class="window-toolbar">
+      <span>Archivo</span><span>Editar</span><span>Ver</span><span>Ayuda</span>
+    </div>
+    <div class="welcome-content">
+      <div class="welcome-copy">
+        <p class="window-kicker">Bienvenido a mi escritorio</p>
+        <h1>Desarrollador <strong>full-stack</strong></h1>
+        <p>
+          Explora mis proyectos, experimentos y aprendizajes desde este pequeño
+          escritorio digital.
+        </p>
+        <button class="xp-button" (click)="openWindow('proyectos')">Ver mis proyectos</button>
+      </div>
+      <div class="monitor-art" aria-hidden="true">
+        <div class="monitor-screen"><span>SOG</span></div>
+        <div class="monitor-stand"></div>
+        <div class="monitor-base"></div>
+      </div>
+    </div>
+    <footer class="window-status">Listo · Guadalajara de Buga, Colombia</footer>
+  </section>
 
-    <main>
-      <section class="hero section" id="inicio">
-        <div class="hero-copy">
-          <p class="eyebrow">Desarrollador full-stack · Guadalajara de Buga, Colombia</p>
-          <h1>Construyo productos digitales con <span>intención.</span></h1>
-          <p class="hero-description">
-            Desarrollador full-stack apasionado por transformar ideas en productos digitales
-            claros, funcionales y accesibles.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#proyectos">Ver proyectos <span>↓</span></a>
-            <a class="button button-secondary" href="#contacto">Hablemos <span>↗</span></a>
-          </div>
-        </div>
-        <div class="hero-orbit" aria-hidden="true">
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="orbit-center">SOG</div>
-          <span class="orbit-dot dot-one"></span>
-          <span class="orbit-dot dot-two"></span>
-          <span class="orbit-dot dot-three"></span>
-        </div>
-      </section>
+  <section class="xp-window project-window" *ngIf="activeWindow === 'proyectos'" aria-labelledby="projects-title">
+    <header class="window-titlebar">
+      <span id="projects-title">Mis proyectos</span>
+      <button class="close-button" (click)="closeWindow()" aria-label="Cerrar ventana">×</button>
+    </header>
+    <div class="project-list">
+      <a href="https://github.com/Santiago-Ospina-Gonzalez/Front-end" target="_blank" rel="noreferrer">
+        <span class="file-icon">📄</span><span><strong>Front-end</strong><small>Angular · TypeScript · SPA</small></span>
+      </a>
+      <a href="https://github.com/Santiago-Ospina-Gonzalez/Uceva-Angular-NodeJS-Taller-Microfrontends-Microservices-Taller" target="_blank" rel="noreferrer">
+        <span class="file-icon">📄</span><span><strong>Uceva Angular NodeJS</strong><small>Microfrontends · Microservicios</small></span>
+      </a>
+      <a href="https://github.com/Santiago-Ospina-Gonzalez/Uceva-Astro-Angular-SSG-SPA-Taller" target="_blank" rel="noreferrer">
+        <span class="file-icon">📄</span><span><strong>Uceva Astro Angular</strong><small>SPA · SSG · Blog tecnológico</small></span>
+      </a>
+      <a href="https://github.com/SantiagoOspina155/Proyecto" target="_blank" rel="noreferrer">
+        <span class="file-icon">📄</span><span><strong>Proyecto Integrador</strong><small>Java · Swing · Aplicación educativa</small></span>
+      </a>
+      <a href="https://github.com/Santiago-Ospina-Gonzalez/inmobiliariaSA" target="_blank" rel="noreferrer">
+        <span class="file-icon">📄</span><span><strong>Inmobiliaria S.A.</strong><small>Java · JSP · PostgreSQL</small></span>
+      </a>
+    </div>
+  </section>
 
-      <section class="section about-section" id="sobre-mi">
-        <div class="section-heading">
-          <p class="eyebrow">01 / Sobre mí</p>
-          <h2>Una base para contar tu historia.</h2>
-        </div>
-        <div class="about-content">
-          <p class="about-lead">
-            Aquí presentaremos tu recorrido, tus intereses y la forma en que conviertes
-            problemas en experiencias digitales.
-          </p>
-          <div class="about-details">
-            <p>
-              Me interesa construir soluciones completas: desde interfaces cuidadas hasta
-              servicios confiables y procesos de entrega automatizados.
-            </p>
-            <div class="skill-list" aria-label="Áreas de interés">
-              <span>Frontend</span>
-              <span>Backend</span>
-              <span>UX / UI</span>
-              <span>Automatización</span>
-            </div>
-          </div>
-        </div>
-      </section>
+  <section class="xp-window info-window" *ngIf="activeWindow === 'sobre-mi'" aria-labelledby="about-title">
+    <header class="window-titlebar">
+      <span id="about-title">Sobre Santiago</span>
+      <button class="close-button" (click)="closeWindow()" aria-label="Cerrar ventana">×</button>
+    </header>
+    <div class="info-content">
+      <span class="large-icon">👤</span>
+      <div><h2>Hola, soy Santiago.</h2><p>Desarrollador full-stack interesado en construir soluciones digitales útiles, claras y accesibles.</p></div>
+    </div>
+  </section>
 
-      <section class="section projects-section" id="proyectos">
-        <div class="section-heading projects-heading">
-          <div>
-            <p class="eyebrow">02 / Proyectos</p>
-            <h2>Cinco ideas, cinco entregas.</h2>
-          </div>
-        </div>
-        <div class="project-grid">
-          <article class="project-card project-card-featured">
-            <span class="project-number">01</span>
-            <div>
-              <p class="project-status">Angular · Frontend</p>
-              <h3>Front-end</h3>
-              <p>Base SPA en Angular con diseño responsive, rutas y estructura preparada para nuevas vistas.</p>
-              <p class="project-tech">Angular 19 · TypeScript · RxJS · Jasmine/Karma</p>
-            </div>
-            <a class="project-link" href="https://github.com/Santiago-Ospina-Gonzalez/Front-end" target="_blank" rel="noreferrer">Repositorio <span>↗</span></a>
-          </article>
-          <article class="project-card">
-            <span class="project-number">02</span>
-            <div>
-              <p class="project-status">Microfrontends · Microservicios</p>
-              <h3>Uceva Angular NodeJS</h3>
-              <p>Arquitectura distribuida con módulos de usuarios, productos, canciones, órdenes y departamentos.</p>
-              <p class="project-tech">Angular · Node.js · Express · Module Federation</p>
-            </div>
-            <a class="project-link" href="https://github.com/Santiago-Ospina-Gonzalez/Uceva-Angular-NodeJS-Taller-Microfrontends-Microservices-Taller" target="_blank" rel="noreferrer">Repositorio <span>↗</span></a>
-          </article>
-          <article class="project-card">
-            <span class="project-number">03</span>
-            <div>
-              <p class="project-status">SPA · SSG</p>
-              <h3>Uceva Astro Angular</h3>
-              <p>Comparación educativa entre Angular SPA y Astro SSG mediante un blog tecnológico.</p>
-              <p class="project-tech">Angular 20 · Astro 5 · Bootstrap · Jest</p>
-            </div>
-            <a class="project-link" href="https://github.com/Santiago-Ospina-Gonzalez/Uceva-Astro-Angular-SSG-SPA-Taller" target="_blank" rel="noreferrer">Repositorio <span>↗</span></a>
-          </article>
-          <article class="project-card">
-            <span class="project-number">04</span>
-            <div>
-              <p class="project-status">Aplicación educativa</p>
-              <h3>Proyecto Integrador</h3>
-              <p>Aplicación de escritorio con contenidos, calculadoras, simulaciones, cuestionarios y reportes.</p>
-              <p class="project-tech">Java · Swing/AWT · JFreeChart · CSV</p>
-            </div>
-            <a class="project-link" href="https://github.com/SantiagoOspina155/Proyecto" target="_blank" rel="noreferrer">Repositorio <span>↗</span></a>
-          </article>
-          <article class="project-card">
-            <span class="project-number">05</span>
-            <div>
-              <p class="project-status">Aplicación empresarial</p>
-              <h3>Inmobiliaria S.A.</h3>
-              <p>Sistema MVC para administrar agentes, clientes, propietarios, inmuebles y contratos.</p>
-              <p class="project-tech">Java · JSP · Servlets · JDBC · PostgreSQL</p>
-            </div>
-            <a class="project-link" href="https://github.com/Santiago-Ospina-Gonzalez/inmobiliariaSA" target="_blank" rel="noreferrer">Repositorio <span>↗</span></a>
-          </article>
-        </div>
-      </section>
+  <section class="xp-window info-window" *ngIf="activeWindow === 'contacto'" aria-labelledby="contact-title">
+    <header class="window-titlebar">
+      <span id="contact-title">Contacto</span>
+      <button class="close-button" (click)="closeWindow()" aria-label="Cerrar ventana">×</button>
+    </header>
+    <div class="info-content">
+      <span class="large-icon">✉️</span>
+      <div><h2>Conectemos.</h2><p><a href="mailto:santiago.ospina03@gmail.com">santiago.ospina03@gmail.com</a></p><p><a href="https://www.linkedin.com/in/santiago-ospina-321359244/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/Santiago-Ospina-Gonzalez" target="_blank" rel="noreferrer">GitHub</a></p></div>
+    </div>
+  </section>
 
-      <section class="section contact-section" id="contacto">
-        <p class="eyebrow">03 / Contacto</p>
-        <h2>¿Construimos algo interesante?</h2>
-        <p>Disponible para conversar sobre proyectos, ideas y oportunidades de colaboración.</p>
-        <div class="contact-links">
-          <a class="contact-link" href="mailto:santiago.ospina03@gmail.com">santiago.ospina03@gmail.com <span>↗</span></a>
-          <a class="contact-link" href="https://github.com/Santiago-Ospina-Gonzalez" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
-          <a class="contact-link" href="https://www.linkedin.com/in/santiago-ospina-321359244/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>© {{ currentYear }} Santiago Ospina Gonzalez</p>
-      <p>Hecho con intención.</p>
-    </footer>
+  <footer class="xp-taskbar">
+    <button class="start-button" (click)="openWindow('proyectos')"><span>⊞</span> Inicio</button>
+    <button class="task-button" (click)="openWindow('proyectos')">📁 Mis proyectos</button>
+    <span class="task-time">{{ currentYear }}</span>
+  </footer>
+</main>
