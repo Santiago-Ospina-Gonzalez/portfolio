@@ -103,6 +103,10 @@ button, a { font: inherit; }
 .modern-project-card h3 { font-family: "Space Grotesk", sans-serif; font-size: 1.5rem; margin: 8px 0; }
 .modern-project-card p { color: #9da6b8; line-height: 1.5; margin: 0; }
 .modern-project-card strong { font-size: 1.4rem; margin-left: auto; }
+.modern-detail-backdrop { align-items: center; background: rgb(0 0 0 / 72%); display: flex; inset: 0; justify-content: center; padding: 24px; position: fixed; z-index: 10; }
+.modern-detail { background: #111521; border: 1px solid #a4ff79; box-shadow: 0 0 45px rgb(164 255 121 / 18%); color: #f3f5fa; max-height: 90vh; max-width: 650px; overflow: auto; padding: 34px; position: relative; width: 100%; }
+.modern-detail h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 8px 0 18px; }.modern-detail h3 { font-family: "Space Grotesk", sans-serif; margin-top: 24px; }.modern-detail p, .modern-detail li { color: #9da6b8; line-height: 1.55; }.modern-detail ul { padding-left: 20px; }
+.modern-detail-close { background: transparent; border: 0; color: #a4ff79; cursor: pointer; font-size: 1.8rem; position: absolute; right: 16px; top: 10px; }.modern-detail-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; }.modern-detail-links a { background: #a4ff79; color: #0a110c; font-weight: 700; padding: 10px 14px; text-decoration: none; }.modern-detail-links a:first-child { background: transparent; border: 1px solid #a4ff79; color: #a4ff79; }
 .modern-contact { text-align: center; }
 .modern-contact h2 { margin-left: auto; margin-right: auto; }
 .modern-contact a { font-family: "Space Grotesk", sans-serif; font-size: 1.3rem; text-decoration: none; }
@@ -244,6 +248,7 @@ button, a { font: inherit; }
 .detail-category { color: #2874ba !important; font-size: .72rem !important; font-weight: 700; text-transform: uppercase; }
 .detail-content ul { margin: 5px 0 18px; padding-left: 20px; }
 .xp-link { color: #1554a0; font-size: .85rem; font-weight: 700; }
+.xp-links { display: flex; flex-wrap: wrap; gap: 18px; }
 
 .xp-taskbar { align-items: center; background: linear-gradient(#2c9bdf, #1763b6 50%, #0b4d9e); bottom: 0; box-shadow: 0 -2px 4px rgb(0 0 0 / 25%); display: flex; height: 38px; left: 0; padding-right: 10px; position: absolute; right: 0; z-index: 3; }
 .start-button { background: linear-gradient(#60c452, #2c921e); border: 0; border-radius: 0 12px 12px 0; box-shadow: 1px 0 3px #174b17; color: #fff; cursor: pointer; font-size: 0.85rem; font-style: italic; font-weight: 700; height: 34px; padding: 0 20px 0 12px; }

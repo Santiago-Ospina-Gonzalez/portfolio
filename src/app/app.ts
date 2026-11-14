@@ -9,6 +9,7 @@ interface Project {
   technologies: string;
   features: string[];
   repository: string;
+  liveUrl: string;
 }
 
 const PROJECTS: Project[] = [
@@ -19,16 +20,18 @@ const PROJECTS: Project[] = [
     type: 'Aplicación web frontend de una sola página (SPA).',
     technologies: 'Angular 19, TypeScript 5.7, HTML5, CSS3, RxJS, Node.js, Jasmine y Karma.',
     features: ['Página de bienvenida', 'Diseño responsive', 'Rutas y estructura para nuevos componentes', 'Enlaces a documentación y redes de Angular'],
-    repository: 'https://github.com/Santiago-Ospina-Gonzalez/Front-end'
+    repository: 'https://github.com/Santiago-Ospina-Gonzalez/Front-end',
+    liveUrl: 'https://santiago-ospina-gonzalez.github.io/Front-end/'
   },
   {
-    name: 'Uceva Angular NodeJS',
-    category: 'Microfrontends · Microservicios',
-    objective: 'Practicar una arquitectura cliente-servidor distribuida con microfrontends Angular y microservicios NodeJS.',
-    type: 'Proyecto académico full-stack.',
-    technologies: 'Angular 20.3.14, TypeScript, Node.js, Express, Module Federation, Bootstrap, SCSS, RxJS, Swagger, Faker.js y Jest.',
-    features: ['Host Angular con carga dinámica mediante remoteEntry.js', 'Módulos de usuarios, productos, canciones, órdenes y departamentos', 'APIs REST por dominio', 'Datos simulados y documentación Swagger'],
-    repository: 'https://github.com/Santiago-Ospina-Gonzalez/Uceva-Angular-NodeJS-Taller-Microfrontends-Microservices-Taller'
+    name: 'Uceva SpringBoot',
+    category: 'Backend · Clean Architecture',
+    objective: 'Practicar una arquitectura limpia en Spring Boot con módulos independientes para distintos dominios.',
+    type: 'Backend REST con datos de ejemplo generados en memoria.',
+    technologies: 'Java, Spring Boot, Gradle, JavaFaker, Swagger/OpenAPI y JUnit.',
+    features: ['Módulos de usuarios, productos, categorías, órdenes y proveedores', 'Casos de uso separados por capas', 'Endpoints REST bajo /api', 'Documentación Swagger UI'],
+    repository: 'https://github.com/Santiago-Ospina-Gonzalez/Uceva-SpringBoot-Taller-Clean-Architecture-Taller',
+    liveUrl: 'https://santiago-ospina-gonzalez.github.io/Uceva-SpringBoot-Taller-Clean-Architecture-Taller/'
   },
   {
     name: 'Uceva Astro Angular',
@@ -37,25 +40,28 @@ const PROJECTS: Project[] = [
     type: 'Monorepo educativo de aplicaciones web frontend.',
     technologies: 'Angular 20, TypeScript, Astro 5, Angular Router, RxJS, Bootstrap, Jest, HTML, SCSS, CSS, Node.js y npm.',
     features: ['Blog tecnológico en Angular y Astro', 'Rutas para portada, artículos y sección Sobre el blog', 'Componentes y servicios tipados reutilizables', 'Comparación de tiempos y tamaño de construcción'],
-    repository: 'https://github.com/Santiago-Ospina-Gonzalez/Uceva-Astro-Angular-SSG-SPA-Taller'
+    repository: 'https://github.com/Santiago-Ospina-Gonzalez/Uceva-Astro-Angular-SSG-SPA-Taller',
+    liveUrl: 'https://santiago-ospina-gonzalez.github.io/Uceva-Astro-Angular-SSG-SPA-Taller/'
   },
   {
-    name: 'Proyecto Integrador',
-    category: 'Aplicación educativa',
-    objective: 'Ofrecer una aplicación educativa de escritorio con contenidos, herramientas de aprendizaje y actividades prácticas.',
-    type: 'Aplicación de escritorio para Windows y Linux.',
-    technologies: 'Java, Swing/AWT, NetBeans, Apache Ant, JEP/DJEP, JFreeChart, JavaMail y CSV.',
-    features: ['Menú por áreas académicas', 'Calculadora de derivadas y graficadora', 'Operaciones matriciales y sistemas de ecuaciones', 'Simulaciones físicas, cuestionarios y ranking'],
-    repository: 'https://github.com/SantiagoOspina155/Proyecto'
+    name: 'Taller Uceva Deno',
+    category: 'TypeScript · Patrones de diseño',
+    objective: 'Aplicar patrones de diseño creacionales, estructurales y de comportamiento con Deno.',
+    type: 'Colección de ejercicios ejecutables desde consola.',
+    technologies: 'Deno, TypeScript y módulos ES.',
+    features: ['Builder, Factory Method y Abstract Factory', 'Adapter, Facade y Flyweight', 'Chain of Responsibility, Memento, Observer y Strategy', 'Ejecución independiente por ejercicio'],
+    repository: 'https://github.com/Santiago-Ospina-Gonzalez/Taller-Uceva-Deno-Design-Patterns',
+    liveUrl: 'https://santiago-ospina-gonzalez.github.io/Taller-Uceva-Deno-Design-Patterns/'
   },
   {
-    name: 'Inmobiliaria S.A.',
-    category: 'Aplicación empresarial',
-    objective: 'Administrar la operación de una inmobiliaria centralizando agentes, clientes, propietarios, inmuebles y contratos.',
-    type: 'Aplicación web empresarial con arquitectura MVC y operaciones CRUD.',
-    technologies: 'Java 8, Servlets, JSP, JDBC, PostgreSQL, Apache Ant, NetBeans, GlassFish, Bootstrap y JavaScript.',
-    features: ['Inicio de sesión por tipo de usuario', 'Gestión de agentes, clientes, propietarios e inmuebles', 'Administración y reportes de contratos', 'Persistencia mediante DAOs y PostgreSQL'],
-    repository: 'https://github.com/Santiago-Ospina-Gonzalez/inmobiliariaSA'
+    name: 'Uceva Angular Modularidad',
+    category: 'Angular · Arquitectura modular',
+    objective: 'Practicar la organización de una aplicación Angular por módulos, componentes, servicios e interfaces tipadas.',
+    type: 'Aplicación web frontend con módulos lazy-loaded.',
+    technologies: 'Angular 20, TypeScript, SCSS, RxJS, Jest y Compodoc.',
+    features: ['Módulos de home, games, courses y movies', 'Servicios e interfaces tipadas', 'Consumo de la API pública FreeToGame', 'Rutas lazy-loaded y documentación con Compodoc'],
+    repository: 'https://github.com/Santiago-Ospina-Gonzalez/Uceva-Angular-Taller-Modularidad',
+    liveUrl: 'https://santiago-ospina-gonzalez.github.io/Uceva-Angular-Taller-Modularidad/'
   }
 ];
 

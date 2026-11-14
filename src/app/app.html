@@ -43,6 +43,23 @@
       </div>
     </section>
 
+    <section class="modern-detail-backdrop" *ngIf="selectedProject" (click)="closeWindow()">
+      <article class="modern-detail" (click)="$event.stopPropagation()">
+        <button class="modern-detail-close" (click)="closeWindow()" aria-label="Cerrar detalle">×</button>
+        <p class="modern-eyebrow">{{ selectedProject.category }}</p>
+        <h2>{{ selectedProject.name }}</h2>
+        <p>{{ selectedProject.objective }}</p>
+        <p><strong>Tipo:</strong> {{ selectedProject.type }}</p>
+        <p><strong>Tecnologías:</strong> {{ selectedProject.technologies }}</p>
+        <h3>Funcionalidades</h3>
+        <ul><li *ngFor="let feature of selectedProject.features">{{ feature }}</li></ul>
+        <div class="modern-detail-links">
+          <a [href]="selectedProject.repository" target="_blank" rel="noreferrer">Repositorio ↗</a>
+          <a [href]="selectedProject.liveUrl" target="_blank" rel="noreferrer">Ver aplicación ↗</a>
+        </div>
+      </article>
+    </section>
+
     <section class="modern-section modern-contact" id="contacto">
       <p class="modern-eyebrow">03 / Contacto</p><h2>¿Construimos algo interesante?</h2>
       <a href="mailto:santiago.ospina03@gmail.com">santiago.ospina03@gmail.com ↗</a>
@@ -73,7 +90,7 @@
         <p class="detail-category">{{ selectedProject.category }}</p><h2>{{ selectedProject.name }}</h2>
         <p>{{ selectedProject.objective }}</p><p><strong>Tipo:</strong> {{ selectedProject.type }}</p><p><strong>Tecnologías:</strong> {{ selectedProject.technologies }}</p>
         <h3>Funcionalidades</h3><ul><li *ngFor="let feature of selectedProject.features">{{ feature }}</li></ul>
-        <a class="xp-link" [href]="selectedProject.repository" target="_blank" rel="noreferrer">Abrir repositorio ↗</a>
+        <div class="xp-links"><a class="xp-link" [href]="selectedProject.repository" target="_blank" rel="noreferrer">Abrir repositorio ↗</a><a class="xp-link" [href]="selectedProject.liveUrl" target="_blank" rel="noreferrer">Ver página publicada ↗</a></div>
       </div>
     </section>
 
