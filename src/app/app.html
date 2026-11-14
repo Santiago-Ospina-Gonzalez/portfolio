@@ -47,16 +47,6 @@
       <button class="desktop-icon" (click)="toggleDesign()"><span class="icon-art">🖥️</span><span>Vista moderna</span></button>
     </div>
 
-    <section class="xp-window welcome-window" aria-labelledby="welcome-title">
-      <header class="window-titlebar"><span id="welcome-title">Santiago Ospina Gonzalez - Portafolio</span><div class="window-controls"><span>_</span><span>□</span><span>×</span></div></header>
-      <div class="window-toolbar"><span>Archivo</span><span>Editar</span><span>Ver</span><span>Ayuda</span></div>
-      <div class="welcome-content">
-        <div class="welcome-copy"><p class="window-kicker">Bienvenido a mi escritorio</p><h1>Desarrollador <strong>full-stack</strong></h1><p>Explora mis proyectos, experimentos y aprendizajes desde este pequeño escritorio digital.</p><button class="xp-button" (click)="openWindow('proyectos')">Ver mis proyectos</button></div>
-        <div class="monitor-art" aria-hidden="true"><div class="monitor-screen"><span>SOG</span></div><div class="monitor-stand"></div><div class="monitor-base"></div></div>
-      </div>
-      <footer class="window-status">Listo · Guadalajara de Buga, Colombia</footer>
-    </section>
-
     <section class="xp-window project-window" *ngIf="activeWindow === 'proyectos' && !selectedProject" aria-labelledby="projects-title">
       <header class="window-titlebar"><span id="projects-title">Mis proyectos</span><button class="close-button" (click)="closeWindow()" aria-label="Cerrar ventana">×</button></header>
       <div class="project-list">

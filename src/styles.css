@@ -11,7 +11,7 @@
 
 body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 button, a { font: inherit; }
@@ -59,7 +59,8 @@ button, a { font: inherit; }
 .modern-header nav { display: flex; gap: 28px; }
 .modern-header nav a { color: #9da6b8; font-size: 0.85rem; text-decoration: none; }
 .modern-header nav a:hover { color: #a4ff79; }
-.modern-switch { background: transparent; color: #a4ff79; }
+.modern-switch { background: #a4ff79; border-color: #a4ff79; border-radius: 999px; box-shadow: 0 0 0 3px rgb(164 255 121 / 14%), 0 0 18px rgb(164 255 121 / 28%); color: #0a110c; font-weight: 700; transition: box-shadow .2s, transform .2s; }
+.modern-switch:hover { box-shadow: 0 0 0 5px rgb(164 255 121 / 18%), 0 0 25px rgb(164 255 121 / 45%); transform: translateY(-2px); }
 
 .modern-section { padding: 100px 0; }
 .modern-hero { align-items: center; display: grid; gap: 60px; grid-template-columns: 1fr 0.7fr; min-height: 650px; }
