@@ -73,6 +73,25 @@ button, a { font: inherit; }
 .modern-button { background: #a4ff79; color: #0a110c; display: inline-block; font-weight: 700; margin-top: 20px; padding: 12px 18px; text-decoration: none; }
 .modern-orbit { align-items: center; border: 1px solid #293044; border-radius: 50%; display: flex; height: 330px; justify-content: center; transform: rotate(-25deg) scaleX(.55); width: 330px; }
 .modern-orbit div { align-items: center; background: #a4ff79; border-radius: 50%; color: #0a110c; display: flex; font-family: "Space Grotesk", sans-serif; font-weight: 700; height: 100px; justify-content: center; transform: rotate(25deg) scaleX(1.82); width: 100px; }
+.retro-preview { align-items: center; background: radial-gradient(circle at 75% 35%, #254e6e 0, transparent 30%), linear-gradient(120deg, #111a2b, #0d111d 55%, #17273a); border: 1px solid #33445d; display: flex; gap: 48px; justify-content: space-between; min-height: 330px; overflow: hidden; padding: 52px clamp(28px, 7vw, 90px); position: relative; }
+.retro-preview::before { border: 1px solid rgb(164 255 121 / 25%); border-radius: 50%; content: ""; height: 360px; position: absolute; right: 12%; top: -30%; width: 360px; }
+.retro-preview::after { background: linear-gradient(90deg, transparent, rgb(164 255 121 / 12%), transparent); content: ""; height: 100%; left: -20%; position: absolute; top: 0; transform: skewX(-20deg); width: 25%; animation: retro-sweep 5s ease-in-out infinite; }
+.retro-scanlines { background: repeating-linear-gradient(0deg, transparent 0 4px, rgb(164 255 121 / 4%) 5px 6px); inset: 0; pointer-events: none; position: absolute; }
+.retro-stars { color: #a4ff79; font-family: monospace; inset: 0; pointer-events: none; position: absolute; }
+.retro-stars span { position: absolute; animation: retro-blink 2.4s steps(2) infinite; }
+.retro-stars span:nth-child(1) { left: 8%; top: 24%; }.retro-stars span:nth-child(2) { left: 42%; top: 16%; animation-delay: .6s; }.retro-stars span:nth-child(3) { right: 35%; top: 72%; animation-delay: 1s; }.retro-stars span:nth-child(4) { right: 8%; top: 22%; animation-delay: 1.5s; }.retro-stars span:nth-child(5) { right: 25%; top: 15%; animation-delay: .3s; }
+.retro-preview-content { position: relative; z-index: 1; }
+.retro-label { color: #a4ff79; font-family: monospace; font-size: .72rem; letter-spacing: .16em; margin: 0; }
+.retro-preview h2 { color: #f3f5fa; font-family: "Space Grotesk", sans-serif; font-size: clamp(2.2rem, 5vw, 4.5rem); margin: 12px 0; }
+.retro-preview h2 span { color: #a4ff79; text-shadow: 0 0 18px rgb(164 255 121 / 65%); }
+.retro-preview-content > p:not(.retro-label) { color: #9da6b8; margin-bottom: 24px; }
+.retro-launch-button { background: #a4ff79; border: 0; box-shadow: 0 0 0 4px rgb(164 255 121 / 14%), 0 0 30px rgb(164 255 121 / 28%); color: #0a110c; cursor: pointer; font-family: "Space Grotesk", sans-serif; font-weight: 700; padding: 15px 20px; transition: box-shadow .2s, transform .2s; }
+.retro-launch-button:hover { box-shadow: 0 0 0 7px rgb(164 255 121 / 18%), 0 0 42px rgb(164 255 121 / 52%); transform: translateY(-3px); }
+.launch-icon { font-size: .7rem; margin-right: 8px; }.launch-arrow { font-size: 1.1rem; margin-left: 12px; }
+.retro-console { background: #0a1018; border: 8px solid #657386; border-radius: 8px 8px 15px 15px; box-shadow: 0 0 0 2px #1f2c3f, 0 20px 35px rgb(0 0 0 / 35%); padding: 12px; position: relative; transform: rotate(3deg); width: 230px; z-index: 1; animation: console-float 4s ease-in-out infinite; }
+.console-screen { align-items: center; background: #14251e; border: 2px solid #354d42; color: #a4ff79; display: flex; flex-direction: column; font-family: monospace; font-size: 1.2rem; gap: 8px; justify-content: center; min-height: 110px; text-shadow: 0 0 8px #a4ff79; }
+.console-screen i { font-size: .7rem; font-style: normal; }.console-buttons { display: flex; gap: 8px; justify-content: flex-end; padding-top: 10px; }.console-buttons b { background: #c9537a; border-radius: 50%; height: 12px; width: 12px; }.console-buttons b:nth-child(2) { background: #a4ff79; }.console-buttons b:nth-child(3) { background: #f2bf57; }
+@keyframes retro-sweep { 0%, 40% { left: -20%; } 75%, 100% { left: 110%; } } @keyframes retro-blink { 0%, 35% { opacity: .25; } 45%, 100% { opacity: 1; } } @keyframes console-float { 0%, 100% { transform: rotate(3deg) translateY(0); } 50% { transform: rotate(1deg) translateY(-8px); } }
 .modern-about, .modern-contact { border-top: 1px solid #293044; }
 .modern-section h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); max-width: 760px; }
 .modern-project-heading { align-items: end; display: flex; justify-content: space-between; }
@@ -238,6 +257,8 @@ button, a { font: inherit; }
   .modern-header nav { order: 3; width: 100%; }
   .modern-hero { display: block; min-height: auto; padding-top: 70px; }
   .modern-hero-actions { align-items: flex-start; flex-direction: column; }
+  .retro-preview { align-items: flex-start; flex-direction: column; gap: 26px; }
+  .retro-console { align-self: center; }
   .modern-orbit { margin: 60px auto 0; }
   .modern-project-grid { grid-template-columns: 1fr; }
   .modern-project-heading { display: block; }
