@@ -302,8 +302,32 @@ h3 {
   margin: 0;
 }
 
+.project-tech {
+  color: var(--accent) !important;
+  font-size: 0.78rem;
+  margin-top: 16px !important;
+}
+
 .project-status {
   margin: 0;
+}
+
+.project-link {
+  color: var(--accent);
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.project-link span {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.project-link:hover span {
+  transform: translate(3px, -3px);
 }
 
 .project-arrow {
