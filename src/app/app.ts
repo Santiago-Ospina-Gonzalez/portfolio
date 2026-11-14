@@ -68,7 +68,7 @@ const PROJECTS: Project[] = [
 export class App {
   protected readonly currentYear = new Date().getFullYear();
   protected readonly projects = PROJECTS;
-  protected retroMode = true;
+  protected retroMode = false;
   protected activeWindow: 'sobre-mi' | 'proyectos' | 'contacto' | null = null;
   protected selectedProject: Project | null = null;
 

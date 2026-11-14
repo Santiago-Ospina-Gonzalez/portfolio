@@ -3,7 +3,6 @@
     <header class="modern-header">
       <a class="modern-brand" href="#inicio">SOG<span>.</span></a>
       <nav><a href="#sobre-mi">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a></nav>
-      <button class="style-switch modern-switch" (click)="toggleDesign()">✦ Modo retro XP</button>
     </header>
 
     <section class="modern-hero modern-section" id="inicio">
@@ -11,7 +10,10 @@
         <p class="modern-eyebrow">Desarrollador full-stack · Guadalajara de Buga, Colombia</p>
         <h1>Construyo productos digitales con <span>intención.</span></h1>
         <p class="modern-description">Desarrollador full-stack apasionado por transformar ideas en productos digitales claros, funcionales y accesibles.</p>
-        <a class="modern-button" href="#proyectos">Explorar proyectos ↓</a>
+        <div class="modern-hero-actions">
+          <a class="modern-button" href="#proyectos">Explorar proyectos ↓</a>
+          <button class="style-switch modern-switch" (click)="toggleDesign()">✦ Ver modo retro XP</button>
+        </div>
       </div>
       <div class="modern-orbit" aria-hidden="true"><div>SOG</div></div>
     </section>
